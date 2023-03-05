@@ -14,6 +14,13 @@ const config = {
       stub: resolve("./src/db/migration.stub"),
     },
   },
+  pagination: {
+    limit: {
+      min: 1,
+      max: 100,
+      default: 10,
+    },
+  },
 }
 
 export default config

@@ -4,6 +4,7 @@ import knex from "knex"
 import morgan from "morgan"
 import handleError from "./middlewares/handleError.js"
 import makeRoutesUsers from "./routes/makeRoutesUsers.js"
+import makeRoutesPages from "./routes/makeRoutesPages.js"
 
 const runServer = async (config) => {
   const app = express()
@@ -15,6 +16,7 @@ const runServer = async (config) => {
   const db = knex(config.db)
 
   makeRoutesUsers({ app, db })
+  makeRoutesPages({ app, db })
 
   app.use(handleError)
 

@@ -6,6 +6,15 @@ export const nameValidator = yup
   .matches(/^[\p{L} -]+$/u, "Name is invalid")
   .label("Name")
 
+export const stringValidator = yup.string().required()
+
+export const dateTimeValidator = yup.date().required()
+
+export const statusValidator = yup
+  .string()
+  .oneOf(["draft", "published"])
+  .required()
+
 export const firstNameValidator = nameValidator.label("First name")
 
 export const lastNameValidator = nameValidator.label("Last name")
@@ -32,3 +41,16 @@ export const roleValidator = yup
   .oneOf(["admin", "manager", "editor"])
   .required()
   .label("Role")
+
+export const queryLimitValidator = yup
+  .number()
+  .integer()
+  .min(config.pagination.limit.min)
+  .default(config.pagination.limit.default)
+  .label("Query Limit")
+
+export const queryOffsetValidator = yup
+  .number()
+  .integer()
+  .min(0)
+  .label("Query Offset")

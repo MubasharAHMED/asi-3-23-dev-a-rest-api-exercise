@@ -5,7 +5,7 @@ export const up = async (knex) => {
     table.text("firstName").notNullable()
     table.text("lastName").notNullable()
     table.text("password").notNullable()
-    table.date("role").notNullable()
+    table.text("role").notNullable()
   })
 }
 

@@ -1,4 +1,4 @@
 import config from "./src/config.js"
-import run from "./src/run.js"
+import runServer from "./src/runServer.js"
 
-await run(config)
+await runServer(config)
